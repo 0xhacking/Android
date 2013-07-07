@@ -17,7 +17,6 @@ import org.apache.http.NoHttpResponseException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.impl.client.BasicResponseHandler;
@@ -26,6 +25,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
+import org.apache.http.util.EntityUtils;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
 			String mt = null;
 			try {
 				Log.i("mt", "a");
-				mt = new MyTask().execute("http://www.baidu.com")
+				mt = new MyTask().execute("http://192.168.1.154/test.php")
 						.get();
 				if (mt != "") {
 					Log.i("mt", mt);
@@ -121,15 +121,21 @@ public class MainActivity extends Activity {
 		public void onClick(View v) {
 			Log.i(TAG, "POST request");
 			// 先获取用户名和年龄
+	        mNameText = (EditText) findViewById(R.id.username);
+	        mAgeText = (EditText) findViewById(R.id.password);
+
 			String name = mNameText.getText().toString();
 			String age = mAgeText.getText().toString();
 
+			Log.i("mt",name);
+			Log.i("mt",age);
 			NameValuePair pair1 = new BasicNameValuePair("username", name);
 			NameValuePair pair2 = new BasicNameValuePair("age", age);
 
 			List<NameValuePair> pairList = new ArrayList<NameValuePair>();
 			pairList.add(pair1);
 			pairList.add(pair2);
+		
 
 			try {
 				HttpEntity requestHttpEntity = new UrlEncodedFormEntity(
@@ -185,11 +191,29 @@ public class MainActivity extends Activity {
 
 		@Override
 		protected String doInBackground(String... params) {
-			String line;
+			String line=null;
 			try {
-				Log.i("http", params[0]);
+				 mNameText = (EditText) findViewById(R.id.username);
+			        mAgeText = (EditText) findViewById(R.id.password);
 
-				HttpGet httpPost = new HttpGet(params[0]);
+					String name = mNameText.getText().toString();
+					String age = mAgeText.getText().toString();
+	            NameValuePair pair1 = new BasicNameValuePair("username", name);
+	            NameValuePair pair2 = new BasicNameValuePair("age", age);
+	            Log.i("mt",name);
+				Log.i("mt",age);
+	            List<NameValuePair> pairList = new ArrayList<NameValuePair>();
+	            pairList.add(pair1);
+	            pairList.add(pair2);
+
+				Log.i("http", params[0]);
+                HttpEntity requestHttpEntity = new UrlEncodedFormEntity(
+                        pairList,"UTF-8");
+
+				HttpPost httpPost = new HttpPost(params[0]);
+				
+				// 将请求体内容加入请求中
+				httpPost.setEntity(requestHttpEntity);
 				Log.i("debug","1");
 				HttpParams httpParameters = new BasicHttpParams();
 				Log.i("debug","2");
@@ -214,14 +238,16 @@ public class MainActivity extends Activity {
 				try {
 					Log.i("code", httpPost.toString());
 					
-					String httpResponse = httpClient.execute(httpPost,responseHandler);
-					Log.i("code", httpResponse);
+					HttpResponse httpResponse = httpClient.execute(httpPost);
+					
+					line=EntityUtils.toString(httpResponse.getEntity(),"UTF-8");
+							
 					
 					//if (httpResponse.getStatusLine().getStatusCode() != 200) {
 					//	return null;
 					//}
 					//HttpEntity httpEntity = httpResponse.getEntity();
-					line = "";
+				
 				} catch (ConnectTimeoutException e) {
 					return "connect timeout";
 
@@ -239,13 +265,13 @@ public class MainActivity extends Activity {
 			catch (IOException e) {
 				line = "Can't connect to server3";
 			}
-			return line;
+			return line ;
 		}
 		
 		@Override
 		protected void onPostExecute(String result) {
 			 //ProgressBar update = (ProgressBar)UpdateDialog.findViewById(R.id.horizontalProgressBar);
-           Log.i("mt","mt");
+           Log.i("mt","wt"+result);
            new_view = (TextView) findViewById(R.id.new_view);
 			if(result!=null)
 			{
