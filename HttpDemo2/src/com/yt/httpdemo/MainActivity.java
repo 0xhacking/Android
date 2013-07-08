@@ -28,8 +28,14 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -45,7 +51,9 @@ public class MainActivity extends Activity {
 	private Button getButton = null;
 	private Button postButton = null;
 
+	
 	private TextView new_view = null;
+	private int mId=1;
 
 	// 基本地址：服务器ip地址：端口号/Web项目逻辑地址+目标页面（Servlet）的url-pattern
 	private String url = "http://10.0.2.2:80/test.php";
@@ -55,6 +63,16 @@ public class MainActivity extends Activity {
 		Log.i(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+	
+		  Intent i = getIntent();
+		  Bundle b = i.getExtras();
+		
+		if(b != null){
+			String data1 = b.getString("data1");
+			Log.i("msg",data1);
+			new_view.setText("view"+data1);
+		}
 
 		getButton = (Button) findViewById(R.id.submit_get);
 		getButton.setOnClickListener(mGetClickListener);
@@ -186,7 +204,54 @@ public class MainActivity extends Activity {
 		}
 
 	}
+	
+	public void createNotification()
+	{
+		Log.i("notification", "msg");
+		NotificationCompat.Builder mBuilder =
+		        new NotificationCompat.Builder(this)
+		        .setSmallIcon(R.drawable.ic_launcher)
+		        .setContentTitle("My notification")
+		        .setContentText("Hello World!");
+		// Creates an explicit intent for an Activity in your app
+		Intent resultIntent = new Intent(this, MainActivity.class);
 
+		// The stack builder object will contain an artificial back stack for the
+		// started Activity.
+		// This ensures that navigating backward from the Activity leads out of
+		// your application to the Home screen.
+		//TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+		// Adds the back stack for the Intent (but not the Intent itself)
+		//stackBuilder.addParentStack(MainActivity.class);
+		// Adds the Intent that starts the Activity to the top of the stack
+		//stackBuilder.addNextIntent(resultIntent);
+		//PendingIntent resultPendingIntent =
+		  //      stackBuilder.getPendingIntent(
+		     //       0,
+		      //      PendingIntent.FLAG_UPDATE_CURRENT
+		       // );
+		//mBuilder.setContentIntent(resultPendingIntent);
+		int requestID = (int) System.currentTimeMillis();
+		NotificationManager mNotificationManager =
+		    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+		// mId allows you to update the notification later on.
+		 Intent intent = new Intent(this, MainActivity.class);  //Main.class即本Activity
+			intent.putExtra("data1", "My Data 1");
+		//intent.setAction("notification"+ requestID);
+	
+         //PendingIntent对象，用途：点击Notification通知后跳转到的Activity页面
+         PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0,
+                         intent, PendingIntent.FLAG_UPDATE_CURRENT);
+         //notification.defaults = Notification.DEFAULT_SOUND;
+         intent.setData((Uri.parse("mystring"+requestID)));
+		  	
+
+			
+         // 设置通知显示的参数
+          mBuilder.setContentIntent(pendingIntent);
+		mNotificationManager.notify(mId, mBuilder.build());
+		
+	}
 	class MyTask extends AsyncTask<String, Integer, String> {
 
 		@Override
@@ -273,6 +338,9 @@ public class MainActivity extends Activity {
 			 //ProgressBar update = (ProgressBar)UpdateDialog.findViewById(R.id.horizontalProgressBar);
            Log.i("mt","wt"+result);
            new_view = (TextView) findViewById(R.id.new_view);
+           createNotification();
+           
+           
 			if(result!=null)
 			{
 				new_view.setText("xxxx"+ result);
