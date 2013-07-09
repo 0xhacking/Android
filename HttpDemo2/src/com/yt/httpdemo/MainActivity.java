@@ -65,19 +65,27 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 	
-		  Intent i = getIntent();
-		  Bundle b = i.getExtras();
-		
-		if(b != null){
-			String data1 = b.getString("data1");
-			Log.i("msg",data1);
-			new_view.setText("view"+data1);
-		}
+	   onNewIntent(getIntent());
 
 		getButton = (Button) findViewById(R.id.submit_get);
+		
 		getButton.setOnClickListener(mGetClickListener);
 
 	}
+	
+	public void onNewIntent(Intent intent)
+	{
+		 new_view = (TextView) findViewById(R.id.new_view);
+		
+		Bundle extras =intent.getExtras();
+		if(extras!=null)
+		{
+		new_view.setText(extras.getString("data1"));
+		}
+		
+		
+	}
+	
 
 	private OnClickListener mGetClickListener = new View.OnClickListener() {
 
@@ -87,7 +95,7 @@ public class MainActivity extends Activity {
 			String mt = null;
 			try {
 				Log.i("mt", "a");
-				mt = new MyTask().execute("http://192.168.1.154/test.php")
+				mt = new MyTask().execute("http://192.168.1.118/test.php")
 						.get();
 				if (mt != "") {
 					Log.i("mt", mt);
@@ -236,7 +244,7 @@ public class MainActivity extends Activity {
 		    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		// mId allows you to update the notification later on.
 		 Intent intent = new Intent(this, MainActivity.class);  //Main.class即本Activity
-			intent.putExtra("data1", "My Data 1");
+			intent.putExtra("data1", "Hello Android");
 		//intent.setAction("notification"+ requestID);
 	
          //PendingIntent对象，用途：点击Notification通知后跳转到的Activity页面
