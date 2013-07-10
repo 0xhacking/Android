@@ -28,10 +28,12 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
 
 import android.app.Activity;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -46,17 +48,20 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	private String TAG = "http";
 	private EditText mNameText = null;
-	private EditText mAgeText = null;
+	private EditText mPasswordText = null;
 
 	private Button getButton = null;
-	private Button postButton = null;
+//	private Button postButton = null;
 
 	
 	private TextView new_view = null;
+	
 	private int mId=1;
+	
+	private NotificationCompat.Builder mBuilder=null;
 
 	// 基本地址：服务器ip地址：端口号/Web项目逻辑地址+目标页面（Servlet）的url-pattern
-	private String url = "http://10.0.2.2:80/test.php";
+	private String url = "http://10.0.2.2:80/login.php";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +71,7 @@ public class MainActivity extends Activity {
 		
 	
 	   onNewIntent(getIntent());
+	 
 
 		getButton = (Button) findViewById(R.id.submit_get);
 		
@@ -76,11 +82,12 @@ public class MainActivity extends Activity {
 	public void onNewIntent(Intent intent)
 	{
 		 new_view = (TextView) findViewById(R.id.new_view);
+		 
 		
 		Bundle extras =intent.getExtras();
 		if(extras!=null)
 		{
-		new_view.setText(extras.getString("data1"));
+		new_view.setText((extras.getString("data1")));
 		}
 		
 		
@@ -95,7 +102,7 @@ public class MainActivity extends Activity {
 			String mt = null;
 			try {
 				Log.i("mt", "a");
-				mt = new MyTask().execute("http://192.168.1.118/test.php")
+				mt = new MyTask().execute("http://192.168.1.154/test.php")
 						.get();
 				if (mt != "") {
 					Log.i("mt", mt);
@@ -148,10 +155,10 @@ public class MainActivity extends Activity {
 			Log.i(TAG, "POST request");
 			// 先获取用户名和年龄
 	        mNameText = (EditText) findViewById(R.id.username);
-	        mAgeText = (EditText) findViewById(R.id.password);
+	        mPasswordText = (EditText) findViewById(R.id.password);
 
 			String name = mNameText.getText().toString();
-			String age = mAgeText.getText().toString();
+			String age = mPasswordText.getText().toString();
 
 			Log.i("mt",name);
 			Log.i("mt",age);
@@ -206,7 +213,7 @@ public class MainActivity extends Activity {
 			}
 
 			System.out.println(result);
-			new_view.setText("Response Content from server: " + result);
+			new_view.setText(result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -216,11 +223,13 @@ public class MainActivity extends Activity {
 	public void createNotification()
 	{
 		Log.i("notification", "msg");
-		NotificationCompat.Builder mBuilder =
+	 mBuilder =
 		        new NotificationCompat.Builder(this)
 		        .setSmallIcon(R.drawable.ic_launcher)
 		        .setContentTitle("My notification")
-		        .setContentText("Hello World!");
+		        .setContentText("Hello World!")
+		        .setAutoCancel(true);
+
 		// Creates an explicit intent for an Activity in your app
 		Intent resultIntent = new Intent(this, MainActivity.class);
 
@@ -242,6 +251,7 @@ public class MainActivity extends Activity {
 		int requestID = (int) System.currentTimeMillis();
 		NotificationManager mNotificationManager =
 		    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+		mBuilder.build().flags =mBuilder.build().FLAG_AUTO_CANCEL;
 		// mId allows you to update the notification later on.
 		 Intent intent = new Intent(this, MainActivity.class);  //Main.class即本Activity
 			intent.putExtra("data1", "Hello Android");
@@ -250,8 +260,11 @@ public class MainActivity extends Activity {
          //PendingIntent对象，用途：点击Notification通知后跳转到的Activity页面
          PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0,
                          intent, PendingIntent.FLAG_UPDATE_CURRENT);
+          
          //notification.defaults = Notification.DEFAULT_SOUND;
+        
          intent.setData((Uri.parse("mystring"+requestID)));
+         
 		  	
 
 			
@@ -267,14 +280,16 @@ public class MainActivity extends Activity {
 			String line=null;
 			try {
 				 mNameText = (EditText) findViewById(R.id.username);
-			        mAgeText = (EditText) findViewById(R.id.password);
+			        mPasswordText = (EditText) findViewById(R.id.password);
 
 					String name = mNameText.getText().toString();
-					String age = mAgeText.getText().toString();
-	            NameValuePair pair1 = new BasicNameValuePair("username", name);
-	            NameValuePair pair2 = new BasicNameValuePair("age", age);
+					String password = mPasswordText.getText().toString();
+	            NameValuePair pair1 = new BasicNameValuePair("login", name);
+	            NameValuePair pair2 = new BasicNameValuePair("pwd", password);
+	            NameValuePair pair3 = new BasicNameValuePair("sbt", "1");
+	            
 	            Log.i("mt",name);
-				Log.i("mt",age);
+			
 	            List<NameValuePair> pairList = new ArrayList<NameValuePair>();
 	            pairList.add(pair1);
 	            pairList.add(pair2);
@@ -351,12 +366,24 @@ public class MainActivity extends Activity {
            
 			if(result!=null)
 			{
-				new_view.setText("xxxx"+ result);
+				
+				
+				SharedPreferences sharedPref =MainActivity.this.getPreferences(Context.MODE_PRIVATE);
+				SharedPreferences.Editor editor = sharedPref.edit();
+			
+				editor.putString(getString(R.string.save_data), result+"shared_prefs");
+				editor.commit();
+				SharedPreferences sharedPref2 = MainActivity.this.getPreferences(Context.MODE_PRIVATE);
+				String defaultValue = getResources().getString(R.string.save_data_default);
+				String highScore = sharedPref2.getString(getString(R.string.save_data), defaultValue);
+				Log.i("msg", highScore);
+				new_view.setText(highScore);
+				
 			}
 			else
 			{
-				new_view.setText("xxxx");
-				
+				new_view.setText("xxx");
+					
 				
 			}
 			super.onPostExecute(result);
