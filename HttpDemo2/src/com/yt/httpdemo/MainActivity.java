@@ -26,9 +26,10 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.Activity;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -93,6 +94,7 @@ public class MainActivity extends Activity {
 		
 	}
 	
+	
 
 	private OnClickListener mGetClickListener = new View.OnClickListener() {
 
@@ -102,7 +104,7 @@ public class MainActivity extends Activity {
 			String mt = null;
 			try {
 				Log.i("mt", "a");
-				mt = new MyTask().execute("http://192.168.1.154/test.php")
+				mt = new MyTask().execute("http://192.168.1.154/login.php")
 						.get();
 				if (mt != "") {
 					Log.i("mt", mt);
@@ -286,13 +288,14 @@ public class MainActivity extends Activity {
 					String password = mPasswordText.getText().toString();
 	            NameValuePair pair1 = new BasicNameValuePair("login", name);
 	            NameValuePair pair2 = new BasicNameValuePair("pwd", password);
-	            NameValuePair pair3 = new BasicNameValuePair("sbt", "1");
+	            NameValuePair pair3 = new BasicNameValuePair("android_login", "1");
 	            
 	            Log.i("mt",name);
 			
 	            List<NameValuePair> pairList = new ArrayList<NameValuePair>();
 	            pairList.add(pair1);
 	            pairList.add(pair2);
+	            pairList.add(pair3);
 
 				Log.i("http", params[0]);
                 HttpEntity requestHttpEntity = new UrlEncodedFormEntity(
@@ -362,22 +365,36 @@ public class MainActivity extends Activity {
            Log.i("mt","wt"+result);
            new_view = (TextView) findViewById(R.id.new_view);
            createNotification();
-           
+           Intent intent = new Intent(MainActivity.this, TaskActivity.class);
            
 			if(result!=null)
 			{
 				
 				
-				SharedPreferences sharedPref =MainActivity.this.getPreferences(Context.MODE_PRIVATE);
+				SharedPreferences sharedPref =MainActivity.this.getSharedPreferences("wt",MainActivity.MODE_PRIVATE);
 				SharedPreferences.Editor editor = sharedPref.edit();
-			
-				editor.putString(getString(R.string.save_data), result+"shared_prefs");
+				
+				editor.putString(getString(R.string.save_data), result);
 				editor.commit();
-				SharedPreferences sharedPref2 = MainActivity.this.getPreferences(Context.MODE_PRIVATE);
+				SharedPreferences sharedPref2 = MainActivity.this.getSharedPreferences("wt",MainActivity.MODE_PRIVATE);
 				String defaultValue = getResources().getString(R.string.save_data_default);
 				String highScore = sharedPref2.getString(getString(R.string.save_data), defaultValue);
 				Log.i("msg", highScore);
 				new_view.setText(highScore);
+				try {
+					JSONObject jsonobject=new JSONObject(highScore);
+					String v=jsonobject.getString("v");
+					Log.i("msg", v);
+					if(v.equals("1"))
+					{
+						MainActivity.this.startActivity(intent);	
+					}
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		
+				
 				
 			}
 			else
@@ -390,6 +407,11 @@ public class MainActivity extends Activity {
 		
 		}
 
+	}
+	
+	public void buttonRegister(View view) {
+	    Intent intent = new Intent(this, RegisterActivity.class);
+	    startActivity(intent);
 	}
 
 }

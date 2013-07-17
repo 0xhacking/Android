@@ -5,41 +5,28 @@
     android:orientation="vertical" >
 
        <EditText
-           android:id="@+id/username"
+           android:id="@+id/task_title"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:ems="10"
-           android:text="@string/UserName" >
+           android:text="@string/Register_UserName" >
 
-           <requestFocus />
        </EditText>
 
        <EditText
-           android:id="@+id/password"
+           android:id="@+id/task_content"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:ems="10"
            android:inputType="textPassword"
-           android:text="@string/Password" />
-       <TextView
-           android:id="@+id/new_view"
+           android:text="@string/Register_Password" />
+          <Button
+           android:id="@+id/push_task"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:ems="10"
-           />
-       
-       <Button
-           android:id="@+id/submit_get"
-           android:layout_width="fill_parent"
            android:layout_height="wrap_content"
            android:layout_marginTop="50dp"
-           android:text="登录" />
+           android:text="发布任务" />
+       
 
-       <Button
-           android:id="@+id/button1"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:onClick="buttonRegister"
-           android:text="注册" />
 
 </LinearLayout>

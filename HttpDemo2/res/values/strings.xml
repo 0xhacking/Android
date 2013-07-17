@@ -6,7 +6,13 @@
     <string name="hello_world">Hello world!</string>
     <string name="UserName">输入你的用户名</string>
     <string name="Password">输入你的密码</string>
-        <string name="save_data"></string>
-         <string name="save_data_default">dkfjkdjfdk</string>
+    <string name="save_data"></string>
+    <string name="save_data_default">dkfjkdjfdk</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="Register_UserName">用户名</string>
+    <string name="Register_Password">密码</string>
+    <string name="Register_Mobile">手机</string>
+    <string name="title_activity_task">TaskActivity</string>
 
 </resources>
