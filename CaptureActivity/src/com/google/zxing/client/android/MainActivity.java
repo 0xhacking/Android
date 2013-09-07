@@ -2,7 +2,6 @@ package com.google.zxing.client.android;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -12,11 +11,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.NoHttpResponseException;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
@@ -121,8 +123,23 @@ public class MainActivity extends Activity {
 				InputStream is2 = conn2.getInputStream();
 				bitmap2 = BitmapFactory.decodeStream(is2);
 				//http post
+				NameValuePair pair1 = new BasicNameValuePair("name", params[0]);
+
+				List<NameValuePair> pairList = new ArrayList<NameValuePair>();
+				pairList.add(pair1);
+
+				Log.i("http", params[0]);
+				HttpEntity requestHttpEntity = new UrlEncodedFormEntity(
+						pairList, "UTF-8");
+
 				HttpPost httpPost = new HttpPost("http://192.168.1.125/t.php");
+
+				// 将请求体内容加入请求中
+				httpPost.setEntity(requestHttpEntity);
+
 				
+				
+								
 				HttpParams httpParameters = new BasicHttpParams();
 
 				DefaultHttpClient httpClient = new DefaultHttpClient(
