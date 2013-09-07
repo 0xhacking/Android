@@ -1,0 +1,1039 @@
+.
+├── AndroidManifest.xml
+├── ant.properties
+├── assets
+│   ├── html
+│   │   └── apache-license.txt
+│   ├── html-de
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-en
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-es
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-fr
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-it
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-ja
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-ko
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-nl
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-pt
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-ru
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-zh-rCN
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── html-zh-rTW
+│   │   ├── about1d.html
+│   │   ├── about2d.html
+│   │   ├── index.html
+│   │   ├── license.html
+│   │   ├── scanning.html
+│   │   ├── sharing.html
+│   │   └── whatsnew.html
+│   ├── images
+│   │   ├── big-1d.png
+│   │   ├── big-datamatrix.png
+│   │   ├── big-qr.png
+│   │   ├── contact-results-screen.jpg
+│   │   ├── demo-no.png
+│   │   ├── demo-yes.png
+│   │   ├── scan-example.png
+│   │   ├── scan-from-phone.png
+│   │   └── search-book-contents.jpg
+│   └── style.css
+├── bin
+│   ├── AndroidManifest.xml
+│   ├── CaptureActivity.apk
+│   ├── classes
+│   │   └── com
+│   │       └── google
+│   │           └── zxing
+│   │               ├── aztec
+│   │               │   ├── AztecDetectorResult.class
+│   │               │   ├── AztecReader.class
+│   │               │   ├── AztecWriter.class
+│   │               │   ├── decoder
+│   │               │   │   ├── Decoder.class
+│   │               │   │   └── Decoder$Table.class
+│   │               │   ├── detector
+│   │               │   │   ├── Detector.class
+│   │               │   │   └── Detector$Point.class
+│   │               │   └── encoder
+│   │               │       ├── AztecCode.class
+│   │               │       └── Encoder.class
+│   │               ├── BarcodeFormat.class
+│   │               ├── Binarizer.class
+│   │               ├── BinaryBitmap.class
+│   │               ├── ChecksumException.class
+│   │               ├── client
+│   │               │   ├── android
+│   │               │   │   ├── AmbientLightManager.class
+│   │               │   │   ├── BeepManager$1.class
+│   │               │   │   ├── BeepManager.class
+│   │               │   │   ├── book
+│   │               │   │   │   ├── BrowseBookListener.class
+│   │               │   │   │   ├── SearchBookContentsActivity$1.class
+│   │               │   │   │   ├── SearchBookContentsActivity$2.class
+│   │               │   │   │   ├── SearchBookContentsActivity.class
+│   │               │   │   │   ├── SearchBookContentsActivity.java~
+│   │               │   │   │   ├── SearchBookContentsActivity$NetworkTask.class
+│   │               │   │   │   ├── SearchBookContentsAdapter.class
+│   │               │   │   │   ├── SearchBookContentsListItem.class
+│   │               │   │   │   └── SearchBookContentsResult.class
+│   │               │   │   ├── BuildConfig.class
+│   │               │   │   ├── camera
+│   │               │   │   │   ├── AutoFocusManager$AutoFocusTask.class
+│   │               │   │   │   ├── AutoFocusManager.class
+│   │               │   │   │   ├── CameraConfigurationManager$1.class
+│   │               │   │   │   ├── CameraConfigurationManager.class
+│   │               │   │   │   ├── CameraManager.class
+│   │               │   │   │   ├── exposure
+│   │               │   │   │   │   ├── DefaultExposureInterface.class
+│   │               │   │   │   │   ├── ExposureInterface.class
+│   │               │   │   │   │   ├── ExposureManager.class
+│   │               │   │   │   │   └── FroyoExposureInterface.class
+│   │               │   │   │   ├── FrontLightMode.class
+│   │               │   │   │   ├── open
+│   │               │   │   │   │   ├── DefaultOpenCameraInterface.class
+│   │               │   │   │   │   ├── GingerbreadOpenCameraInterface.class
+│   │               │   │   │   │   ├── OpenCameraInterface.class
+│   │               │   │   │   │   └── OpenCameraManager.class
+│   │               │   │   │   └── PreviewCallback.class
+│   │               │   │   ├── CaptureActivity.class
+│   │               │   │   ├── CaptureActivityHandler.class
+│   │               │   │   ├── CaptureActivityHandler$State.class
+│   │               │   │   ├── CaptureActivity.java~
+│   │               │   │   ├── common
+│   │               │   │   │   ├── executor
+│   │               │   │   │   │   ├── AsyncTaskExecInterface.class
+│   │               │   │   │   │   ├── AsyncTaskExecManager.class
+│   │               │   │   │   │   ├── DefaultAsyncTaskExecInterface.class
+│   │               │   │   │   │   └── HoneycombAsyncTaskExecInterface.class
+│   │               │   │   │   └── PlatformSupportManager.class
+│   │               │   │   ├── Contents.class
+│   │               │   │   ├── Contents$Type.class
+│   │               │   │   ├── DecodeFormatManager.class
+│   │               │   │   ├── DecodeHandler.class
+│   │               │   │   ├── DecodeHintManager.class
+│   │               │   │   ├── DecodeThread.class
+│   │               │   │   ├── encode
+│   │               │   │   │   ├── ContactEncoder.class
+│   │               │   │   │   ├── EncodeActivity.class
+│   │               │   │   │   ├── Formatter.class
+│   │               │   │   │   ├── MECARDContactEncoder$1.class
+│   │               │   │   │   ├── MECARDContactEncoder$2.class
+│   │               │   │   │   ├── MECARDContactEncoder$3.class
+│   │               │   │   │   ├── MECARDContactEncoder.class
+│   │               │   │   │   ├── QRCodeEncoder.class
+│   │               │   │   │   ├── VCardContactEncoder$1.class
+│   │               │   │   │   ├── VCardContactEncoder$2.class
+│   │               │   │   │   └── VCardContactEncoder.class
+│   │               │   │   ├── FinishListener.class
+│   │               │   │   ├── HelpActivity$1.class
+│   │               │   │   ├── HelpActivity$2.class
+│   │               │   │   ├── HelpActivity.class
+│   │               │   │   ├── HelpActivity$HelpClient.class
+│   │               │   │   ├── history
+│   │               │   │   │   ├── DBHelper.class
+│   │               │   │   │   ├── HistoryActivity$1.class
+│   │               │   │   │   ├── HistoryActivity.class
+│   │               │   │   │   ├── HistoryItemAdapter.class
+│   │               │   │   │   ├── HistoryItem.class
+│   │               │   │   │   └── HistoryManager.class
+│   │               │   │   ├── HttpHelper.class
+│   │               │   │   ├── HttpHelper$ContentType.class
+│   │               │   │   ├── InactivityTimer.class
+│   │               │   │   ├── InactivityTimer$InactivityAsyncTask.class
+│   │               │   │   ├── InactivityTimer$PowerStatusReceiver.class
+│   │               │   │   ├── Intents.class
+│   │               │   │   ├── Intents$Encode.class
+│   │               │   │   ├── Intents$History.class
+│   │               │   │   ├── IntentSource.class
+│   │               │   │   ├── Intents$Scan.class
+│   │               │   │   ├── Intents$SearchBookContents.class
+│   │               │   │   ├── Intents$Share.class
+│   │               │   │   ├── Intents$WifiConnect.class
+│   │               │   │   ├── LocaleManager.class
+│   │               │   │   ├── pref
+│   │               │   │   │   ├── BSPlusPreference$1.class
+│   │               │   │   │   └── BSPlusPreference.class
+│   │               │   │   ├── PreferencesActivity.class
+│   │               │   │   ├── R$array.class
+│   │               │   │   ├── R$attr.class
+│   │               │   │   ├── R.class
+│   │               │   │   ├── R$color.class
+│   │               │   │   ├── R$dimen.class
+│   │               │   │   ├── R$drawable.class
+│   │               │   │   ├── result
+│   │               │   │   │   ├── AddressBookResultHandler.class
+│   │               │   │   │   ├── CalendarResultHandler.class
+│   │               │   │   │   ├── EmailAddressResultHandler.class
+│   │               │   │   │   ├── GeoResultHandler.class
+│   │               │   │   │   ├── ISBNResultHandler$1.class
+│   │               │   │   │   ├── ISBNResultHandler.class
+│   │               │   │   │   ├── ISBNResultHandler.java~
+│   │               │   │   │   ├── ProductResultHandler$1.class
+│   │               │   │   │   ├── ProductResultHandler.class
+│   │               │   │   │   ├── ResultButtonListener.class
+│   │               │   │   │   ├── ResultHandler$1.class
+│   │               │   │   │   ├── ResultHandler.class
+│   │               │   │   │   ├── ResultHandlerFactory.class
+│   │               │   │   │   ├── SMSResultHandler.class
+│   │               │   │   │   ├── supplement
+│   │               │   │   │   │   ├── AmazonInfoRetriever.class
+│   │               │   │   │   │   ├── BookResultInfoRetriever.class
+│   │               │   │   │   │   ├── ProductResultInfoRetriever.class
+│   │               │   │   │   │   ├── SupplementalInfoRetriever.class
+│   │               │   │   │   │   ├── TitleRetriever.class
+│   │               │   │   │   │   └── URIResultInfoRetriever.class
+│   │               │   │   │   ├── TelResultHandler.class
+│   │               │   │   │   ├── TextResultHandler.class
+│   │               │   │   │   ├── URIResultHandler.class
+│   │               │   │   │   ├── WifiResultHandler$1.class
+│   │               │   │   │   └── WifiResultHandler.class
+│   │               │   │   ├── R$id.class
+│   │               │   │   ├── R.java~
+│   │               │   │   ├── R.java~~
+│   │               │   │   ├── R$layout.class
+│   │               │   │   ├── R$menu.class
+│   │               │   │   ├── R$raw.class
+│   │               │   │   ├── R$string.class
+│   │               │   │   ├── R$xml.class
+│   │               │   │   ├── ScanFromWebPageManager.class
+│   │               │   │   ├── share
+│   │               │   │   │   ├── AppInfo.class
+│   │               │   │   │   ├── AppPickerActivity.class
+│   │               │   │   │   ├── BookmarkAdapter.class
+│   │               │   │   │   ├── BookmarkPickerActivity.class
+│   │               │   │   │   ├── LoadPackagesAsyncTask$1.class
+│   │               │   │   │   ├── LoadPackagesAsyncTask.class
+│   │               │   │   │   ├── ShareActivity$1.class
+│   │               │   │   │   ├── ShareActivity$2.class
+│   │               │   │   │   ├── ShareActivity$3.class
+│   │               │   │   │   ├── ShareActivity$4.class
+│   │               │   │   │   ├── ShareActivity$5.class
+│   │               │   │   │   └── ShareActivity.class
+│   │               │   │   ├── ViewfinderResultPointCallback.class
+│   │               │   │   ├── ViewfinderView.class
+│   │               │   │   ├── ViewfinderView.java~
+│   │               │   │   └── wifi
+│   │               │   │       ├── NetworkType.class
+│   │               │   │       └── WifiConfigManager.class
+│   │               │   └── result
+│   │               │       ├── AbstractDoCoMoResultParser.class
+│   │               │       ├── AddressBookAUResultParser.class
+│   │               │       ├── AddressBookDoCoMoResultParser.class
+│   │               │       ├── AddressBookParsedResult.class
+│   │               │       ├── BizcardResultParser.class
+│   │               │       ├── BookmarkDoCoMoResultParser.class
+│   │               │       ├── CalendarParsedResult.class
+│   │               │       ├── EmailAddressParsedResult.class
+│   │               │       ├── EmailAddressResultParser.class
+│   │               │       ├── EmailDoCoMoResultParser.class
+│   │               │       ├── ExpandedProductParsedResult.class
+│   │               │       ├── ExpandedProductResultParser.class
+│   │               │       ├── GeoParsedResult.class
+│   │               │       ├── GeoResultParser.class
+│   │               │       ├── ISBNParsedResult.class
+│   │               │       ├── ISBNResultParser.class
+│   │               │       ├── ParsedResult.class
+│   │               │       ├── ParsedResultType.class
+│   │               │       ├── ProductParsedResult.class
+│   │               │       ├── ProductResultParser.class
+│   │               │       ├── ResultParser.class
+│   │               │       ├── SMSMMSResultParser.class
+│   │               │       ├── SMSParsedResult.class
+│   │               │       ├── SMSTOMMSTOResultParser.class
+│   │               │       ├── SMTPResultParser.class
+│   │               │       ├── TelParsedResult.class
+│   │               │       ├── TelResultParser.class
+│   │               │       ├── TextParsedResult.class
+│   │               │       ├── URIParsedResult.class
+│   │               │       ├── URIResultParser.class
+│   │               │       ├── URLTOResultParser.class
+│   │               │       ├── VCardResultParser.class
+│   │               │       ├── VEventResultParser.class
+│   │               │       ├── WifiParsedResult.class
+│   │               │       └── WifiResultParser.class
+│   │               ├── common
+│   │               │   ├── BitArray.class
+│   │               │   ├── BitMatrix.class
+│   │               │   ├── BitSource.class
+│   │               │   ├── CharacterSetECI.class
+│   │               │   ├── DecoderResult.class
+│   │               │   ├── DefaultGridSampler.class
+│   │               │   ├── detector
+│   │               │   │   ├── MathUtils.class
+│   │               │   │   ├── MonochromeRectangleDetector.class
+│   │               │   │   └── WhiteRectangleDetector.class
+│   │               │   ├── DetectorResult.class
+│   │               │   ├── GlobalHistogramBinarizer.class
+│   │               │   ├── GridSampler.class
+│   │               │   ├── HybridBinarizer.class
+│   │               │   ├── PerspectiveTransform.class
+│   │               │   ├── reedsolomon
+│   │               │   │   ├── GenericGF.class
+│   │               │   │   ├── GenericGFPoly.class
+│   │               │   │   ├── ReedSolomonDecoder.class
+│   │               │   │   ├── ReedSolomonEncoder.class
+│   │               │   │   └── ReedSolomonException.class
+│   │               │   └── StringUtils.class
+│   │               ├── datamatrix
+│   │               │   ├── DataMatrixReader.class
+│   │               │   ├── DataMatrixWriter.class
+│   │               │   ├── decoder
+│   │               │   │   ├── BitMatrixParser.class
+│   │               │   │   ├── DataBlock.class
+│   │               │   │   ├── DecodedBitStreamParser.class
+│   │               │   │   ├── DecodedBitStreamParser$Mode.class
+│   │               │   │   ├── Decoder.class
+│   │               │   │   ├── Version.class
+│   │               │   │   ├── Version$ECB.class
+│   │               │   │   └── Version$ECBlocks.class
+│   │               │   ├── detector
+│   │               │   │   ├── Detector.class
+│   │               │   │   ├── Detector$ResultPointsAndTransitions.class
+│   │               │   │   └── Detector$ResultPointsAndTransitionsComparator.class
+│   │               │   └── encoder
+│   │               │       ├── ASCIIEncoder.class
+│   │               │       ├── Base256Encoder.class
+│   │               │       ├── C40Encoder.class
+│   │               │       ├── DataMatrixSymbolInfo144.class
+│   │               │       ├── DefaultPlacement.class
+│   │               │       ├── EdifactEncoder.class
+│   │               │       ├── Encoder.class
+│   │               │       ├── EncoderContext.class
+│   │               │       ├── ErrorCorrection.class
+│   │               │       ├── HighLevelEncoder.class
+│   │               │       ├── SymbolInfo.class
+│   │               │       ├── SymbolShapeHint.class
+│   │               │       ├── TextEncoder.class
+│   │               │       └── X12Encoder.class
+│   │               ├── DecodeHintType.class
+│   │               ├── Dimension.class
+│   │               ├── EncodeHintType.class
+│   │               ├── FormatException.class
+│   │               ├── InvertedLuminanceSource.class
+│   │               ├── LuminanceSource.class
+│   │               ├── maxicode
+│   │               │   ├── decoder
+│   │               │   │   ├── BitMatrixParser.class
+│   │               │   │   ├── DecodedBitStreamParser.class
+│   │               │   │   └── Decoder.class
+│   │               │   └── MaxiCodeReader.class
+│   │               ├── multi
+│   │               │   ├── ByQuadrantReader.class
+│   │               │   ├── GenericMultipleBarcodeReader.class
+│   │               │   ├── MultipleBarcodeReader.class
+│   │               │   └── qrcode
+│   │               │       ├── detector
+│   │               │       │   ├── MultiDetector.class
+│   │               │       │   ├── MultiFinderPatternFinder.class
+│   │               │       │   └── MultiFinderPatternFinder$ModuleSizeComparator.class
+│   │               │       └── QRCodeMultiReader.class
+│   │               ├── MultiFormatReader.class
+│   │               ├── MultiFormatWriter.class
+│   │               ├── NotFoundException.class
+│   │               ├── oned
+│   │               │   ├── CodaBarReader.class
+│   │               │   ├── CodaBarWriter.class
+│   │               │   ├── Code128Reader.class
+│   │               │   ├── Code128Writer.class
+│   │               │   ├── Code39Reader.class
+│   │               │   ├── Code39Writer.class
+│   │               │   ├── Code93Reader.class
+│   │               │   ├── EAN13Reader.class
+│   │               │   ├── EAN13Writer.class
+│   │               │   ├── EAN8Reader.class
+│   │               │   ├── EAN8Writer.class
+│   │               │   ├── EANManufacturerOrgSupport.class
+│   │               │   ├── ITFReader.class
+│   │               │   ├── ITFWriter.class
+│   │               │   ├── MultiFormatOneDReader.class
+│   │               │   ├── MultiFormatUPCEANReader.class
+│   │               │   ├── OneDimensionalCodeWriter.class
+│   │               │   ├── OneDReader.class
+│   │               │   ├── rss
+│   │               │   │   ├── AbstractRSSReader.class
+│   │               │   │   ├── DataCharacter.class
+│   │               │   │   ├── expanded
+│   │               │   │   │   ├── BitArrayBuilder.class
+│   │               │   │   │   ├── decoders
+│   │               │   │   │   │   ├── AbstractExpandedDecoder.class
+│   │               │   │   │   │   ├── AI013103decoder.class
+│   │               │   │   │   │   ├── AI01320xDecoder.class
+│   │               │   │   │   │   ├── AI01392xDecoder.class
+│   │               │   │   │   │   ├── AI01393xDecoder.class
+│   │               │   │   │   │   ├── AI013x0x1xDecoder.class
+│   │               │   │   │   │   ├── AI013x0xDecoder.class
+│   │               │   │   │   │   ├── AI01AndOtherAIs.class
+│   │               │   │   │   │   ├── AI01decoder.class
+│   │               │   │   │   │   ├── AI01weightDecoder.class
+│   │               │   │   │   │   ├── AnyAIDecoder.class
+│   │               │   │   │   │   ├── BlockParsedResult.class
+│   │               │   │   │   │   ├── CurrentParsingState.class
+│   │               │   │   │   │   ├── CurrentParsingState$State.class
+│   │               │   │   │   │   ├── DecodedChar.class
+│   │               │   │   │   │   ├── DecodedInformation.class
+│   │               │   │   │   │   ├── DecodedNumeric.class
+│   │               │   │   │   │   ├── DecodedObject.class
+│   │               │   │   │   │   ├── FieldParser.class
+│   │               │   │   │   │   └── GeneralAppIdDecoder.class
+│   │               │   │   │   ├── ExpandedPair.class
+│   │               │   │   │   ├── ExpandedRow.class
+│   │               │   │   │   └── RSSExpandedReader.class
+│   │               │   │   ├── FinderPattern.class
+│   │               │   │   ├── Pair.class
+│   │               │   │   ├── RSS14Reader.class
+│   │               │   │   └── RSSUtils.class
+│   │               │   ├── UPCAReader.class
+│   │               │   ├── UPCAWriter.class
+│   │               │   ├── UPCEANExtension2Support.class
+│   │               │   ├── UPCEANExtension5Support.class
+│   │               │   ├── UPCEANExtensionSupport.class
+│   │               │   ├── UPCEANReader.class
+│   │               │   ├── UPCEANWriter.class
+│   │               │   └── UPCEReader.class
+│   │               ├── pdf417
+│   │               │   ├── decoder
+│   │               │   │   ├── BarcodeMetadata.class
+│   │               │   │   ├── BarcodeValue.class
+│   │               │   │   ├── BoundingBox.class
+│   │               │   │   ├── Codeword.class
+│   │               │   │   ├── DecodedBitStreamParser.class
+│   │               │   │   ├── DecodedBitStreamParser$Mode.class
+│   │               │   │   ├── DetectionResult.class
+│   │               │   │   ├── DetectionResultColumn.class
+│   │               │   │   ├── DetectionResultRowIndicatorColumn.class
+│   │               │   │   ├── ec
+│   │               │   │   │   ├── ErrorCorrection.class
+│   │               │   │   │   ├── ModulusGF.class
+│   │               │   │   │   └── ModulusPoly.class
+│   │               │   │   ├── PDF417CodewordDecoder.class
+│   │               │   │   └── PDF417ScanningDecoder.class
+│   │               │   ├── detector
+│   │               │   │   ├── Detector.class
+│   │               │   │   └── PDF417DetectorResult.class
+│   │               │   ├── encoder
+│   │               │   │   ├── BarcodeMatrix.class
+│   │               │   │   ├── BarcodeRow.class
+│   │               │   │   ├── Compaction.class
+│   │               │   │   ├── Dimensions.class
+│   │               │   │   ├── PDF417.class
+│   │               │   │   ├── PDF417ErrorCorrection.class
+│   │               │   │   └── PDF417HighLevelEncoder.class
+│   │               │   ├── PDF417Common.class
+│   │               │   ├── PDF417Reader.class
+│   │               │   ├── PDF417ResultMetadata.class
+│   │               │   └── PDF417Writer.class
+│   │               ├── PlanarYUVLuminanceSource.class
+│   │               ├── qrcode
+│   │               │   ├── decoder
+│   │               │   │   ├── BitMatrixParser.class
+│   │               │   │   ├── DataBlock.class
+│   │               │   │   ├── DataMask.class
+│   │               │   │   ├── DataMask$DataMask000.class
+│   │               │   │   ├── DataMask$DataMask001.class
+│   │               │   │   ├── DataMask$DataMask010.class
+│   │               │   │   ├── DataMask$DataMask011.class
+│   │               │   │   ├── DataMask$DataMask100.class
+│   │               │   │   ├── DataMask$DataMask101.class
+│   │               │   │   ├── DataMask$DataMask110.class
+│   │               │   │   ├── DataMask$DataMask111.class
+│   │               │   │   ├── DecodedBitStreamParser.class
+│   │               │   │   ├── Decoder.class
+│   │               │   │   ├── ErrorCorrectionLevel.class
+│   │               │   │   ├── FormatInformation.class
+│   │               │   │   ├── Mode.class
+│   │               │   │   ├── Version.class
+│   │               │   │   ├── Version$ECB.class
+│   │               │   │   └── Version$ECBlocks.class
+│   │               │   ├── detector
+│   │               │   │   ├── AlignmentPattern.class
+│   │               │   │   ├── AlignmentPatternFinder.class
+│   │               │   │   ├── Detector.class
+│   │               │   │   ├── FinderPattern.class
+│   │               │   │   ├── FinderPatternFinder$CenterComparator.class
+│   │               │   │   ├── FinderPatternFinder.class
+│   │               │   │   ├── FinderPatternFinder$FurthestFromAverageComparator.class
+│   │               │   │   └── FinderPatternInfo.class
+│   │               │   ├── encoder
+│   │               │   │   ├── BlockPair.class
+│   │               │   │   ├── ByteMatrix.class
+│   │               │   │   ├── Encoder.class
+│   │               │   │   ├── MaskUtil.class
+│   │               │   │   ├── MatrixUtil.class
+│   │               │   │   └── QRCode.class
+│   │               │   ├── QRCodeReader.class
+│   │               │   └── QRCodeWriter.class
+│   │               ├── Reader.class
+│   │               ├── ReaderException.class
+│   │               ├── Result.class
+│   │               ├── ResultMetadataType.class
+│   │               ├── ResultPointCallback.class
+│   │               ├── ResultPoint.class
+│   │               ├── RGBLuminanceSource.class
+│   │               ├── Writer.class
+│   │               └── WriterException.class
+│   ├── classes.dex
+│   ├── dexedLibs
+│   ├── proguard.txt
+│   ├── res
+│   │   ├── drawable
+│   │   │   ├── launcher_icon.png
+│   │   │   ├── share_via_barcode.png
+│   │   │   └── shopper_icon.png
+│   │   ├── drawable-hdpi
+│   │   │   ├── launcher_icon.png
+│   │   │   └── shopper_icon.png
+│   │   ├── drawable-xhdpi
+│   │   │   └── launcher_icon.png
+│   │   └── drawable-xxhdpi
+│   │       └── launcher_icon.png
+│   └── resources.ap_
+├── build.xml
+├── CaptureActivity.tree
+├── gen
+│   └── com
+│       └── google
+│           └── zxing
+│               └── client
+│                   └── android
+│                       ├── BuildConfig.java
+│                       ├── R.java
+│                       └── R.java~
+├── proguard-android-optimize.txt
+├── project.properties
+├── res
+│   ├── drawable
+│   │   ├── launcher_icon.png
+│   │   ├── share_via_barcode.png
+│   │   └── shopper_icon.png
+│   ├── drawable-hdpi
+│   │   ├── launcher_icon.png
+│   │   └── shopper_icon.png
+│   ├── drawable-ldpi
+│   ├── drawable-mdpi
+│   ├── drawable-xhdpi
+│   │   └── launcher_icon.png
+│   ├── drawable-xxhdpi
+│   │   └── launcher_icon.png
+│   ├── layout
+│   │   ├── app_picker_list_item.xml
+│   │   ├── bookmark_picker_list_item.xml
+│   │   ├── capture.xml
+│   │   ├── encode.xml
+│   │   ├── help.xml
+│   │   ├── history_list_item.xml
+│   │   ├── search_book_contents_header.xml
+│   │   ├── search_book_contents_list_item.xml
+│   │   ├── search_book_contents.xml
+│   │   ├── search_book_contents.xml~
+│   │   └── share.xml
+│   ├── layout-land
+│   │   ├── encode.xml
+│   │   └── share.xml
+│   ├── layout-ldpi
+│   │   └── capture.xml
+│   ├── menu
+│   │   ├── capture.xml
+│   │   ├── encode.xml
+│   │   └── history.xml
+│   ├── raw
+│   │   └── beep.ogg
+│   ├── values
+│   │   ├── arrays.xml
+│   │   ├── colors.xml
+│   │   ├── dimens.xml
+│   │   ├── ids.xml
+│   │   └── strings.xml
+│   ├── values-ar
+│   │   └── strings.xml
+│   ├── values-bg
+│   │   └── strings.xml
+│   ├── values-ca
+│   │   └── strings.xml
+│   ├── values-cs
+│   │   └── strings.xml
+│   ├── values-da
+│   │   └── strings.xml
+│   ├── values-de
+│   │   └── strings.xml
+│   ├── values-el
+│   │   └── strings.xml
+│   ├── values-es
+│   │   └── strings.xml
+│   ├── values-eu
+│   │   └── strings.xml
+│   ├── values-fi
+│   │   └── strings.xml
+│   ├── values-fr
+│   │   └── strings.xml
+│   ├── values-he
+│   │   └── strings.xml
+│   ├── values-hi
+│   │   └── strings.xml
+│   ├── values-hu
+│   │   └── strings.xml
+│   ├── values-id
+│   │   └── strings.xml
+│   ├── values-it
+│   │   └── strings.xml
+│   ├── values-iw
+│   │   └── strings.xml
+│   ├── values-ja
+│   │   └── strings.xml
+│   ├── values-ko
+│   │   └── strings.xml
+│   ├── values-nl
+│   │   └── strings.xml
+│   ├── values-pl
+│   │   └── strings.xml
+│   ├── values-pt
+│   │   └── strings.xml
+│   ├── values-ru
+│   │   └── strings.xml
+│   ├── values-sk
+│   │   └── strings.xml
+│   ├── values-sl
+│   │   └── strings.xml
+│   ├── values-sv
+│   │   └── strings.xml
+│   ├── values-tr
+│   │   └── strings.xml
+│   ├── values-zh-rCN
+│   │   └── strings.xml
+│   ├── values-zh-rTW
+│   │   └── strings.xml
+│   └── xml
+│       ├── preferences.xml
+│       └── preferences.xml~
+└── src
+    └── com
+        └── google
+            └── zxing
+                ├── aztec
+                │   ├── AztecDetectorResult.java
+                │   ├── AztecReader.java
+                │   ├── AztecWriter.java
+                │   ├── decoder
+                │   │   └── Decoder.java
+                │   ├── detector
+                │   │   └── Detector.java
+                │   └── encoder
+                │       ├── AztecCode.java
+                │       └── Encoder.java
+                ├── BarcodeFormat.java
+                ├── Binarizer.java
+                ├── BinaryBitmap.java
+                ├── ChecksumException.java
+                ├── client
+                │   ├── android
+                │   │   ├── AmbientLightManager.java
+                │   │   ├── BeepManager.java
+                │   │   ├── book
+                │   │   │   ├── BrowseBookListener.java
+                │   │   │   ├── SearchBookContentsActivity.java
+                │   │   │   ├── SearchBookContentsActivity.java~
+                │   │   │   ├── SearchBookContentsAdapter.java
+                │   │   │   ├── SearchBookContentsListItem.java
+                │   │   │   └── SearchBookContentsResult.java
+                │   │   ├── camera
+                │   │   │   ├── AutoFocusManager.java
+                │   │   │   ├── CameraConfigurationManager.java
+                │   │   │   ├── CameraManager.java
+                │   │   │   ├── exposure
+                │   │   │   │   ├── DefaultExposureInterface.java
+                │   │   │   │   ├── ExposureInterface.java
+                │   │   │   │   ├── ExposureManager.java
+                │   │   │   │   └── FroyoExposureInterface.java
+                │   │   │   ├── FrontLightMode.java
+                │   │   │   ├── open
+                │   │   │   │   ├── DefaultOpenCameraInterface.java
+                │   │   │   │   ├── GingerbreadOpenCameraInterface.java
+                │   │   │   │   ├── OpenCameraInterface.java
+                │   │   │   │   └── OpenCameraManager.java
+                │   │   │   └── PreviewCallback.java
+                │   │   ├── CaptureActivityHandler.java
+                │   │   ├── CaptureActivity.java
+                │   │   ├── CaptureActivity.java~
+                │   │   ├── common
+                │   │   │   ├── executor
+                │   │   │   │   ├── AsyncTaskExecInterface.java
+                │   │   │   │   ├── AsyncTaskExecManager.java
+                │   │   │   │   ├── DefaultAsyncTaskExecInterface.java
+                │   │   │   │   └── HoneycombAsyncTaskExecInterface.java
+                │   │   │   └── PlatformSupportManager.java
+                │   │   ├── Contents.java
+                │   │   ├── DecodeFormatManager.java
+                │   │   ├── DecodeHandler.java
+                │   │   ├── DecodeHintManager.java
+                │   │   ├── DecodeThread.java
+                │   │   ├── encode
+                │   │   │   ├── ContactEncoder.java
+                │   │   │   ├── EncodeActivity.java
+                │   │   │   ├── Formatter.java
+                │   │   │   ├── MECARDContactEncoder.java
+                │   │   │   ├── QRCodeEncoder.java
+                │   │   │   └── VCardContactEncoder.java
+                │   │   ├── FinishListener.java
+                │   │   ├── HelpActivity.java
+                │   │   ├── history
+                │   │   │   ├── DBHelper.java
+                │   │   │   ├── HistoryActivity.java
+                │   │   │   ├── HistoryItemAdapter.java
+                │   │   │   ├── HistoryItem.java
+                │   │   │   └── HistoryManager.java
+                │   │   ├── HttpHelper.java
+                │   │   ├── InactivityTimer.java
+                │   │   ├── Intents.java
+                │   │   ├── IntentSource.java
+                │   │   ├── LocaleManager.java
+                │   │   ├── pref
+                │   │   │   └── BSPlusPreference.java
+                │   │   ├── PreferencesActivity.java
+                │   │   ├── result
+                │   │   │   ├── AddressBookResultHandler.java
+                │   │   │   ├── CalendarResultHandler.java
+                │   │   │   ├── EmailAddressResultHandler.java
+                │   │   │   ├── GeoResultHandler.java
+                │   │   │   ├── ISBNResultHandler.java
+                │   │   │   ├── ISBNResultHandler.java~
+                │   │   │   ├── ProductResultHandler.java
+                │   │   │   ├── ResultButtonListener.java
+                │   │   │   ├── ResultHandlerFactory.java
+                │   │   │   ├── ResultHandler.java
+                │   │   │   ├── SMSResultHandler.java
+                │   │   │   ├── supplement
+                │   │   │   │   ├── AmazonInfoRetriever.java
+                │   │   │   │   ├── BookResultInfoRetriever.java
+                │   │   │   │   ├── ProductResultInfoRetriever.java
+                │   │   │   │   ├── SupplementalInfoRetriever.java
+                │   │   │   │   ├── TitleRetriever.java
+                │   │   │   │   └── URIResultInfoRetriever.java
+                │   │   │   ├── TelResultHandler.java
+                │   │   │   ├── TextResultHandler.java
+                │   │   │   ├── URIResultHandler.java
+                │   │   │   └── WifiResultHandler.java
+                │   │   ├── ScanFromWebPageManager.java
+                │   │   ├── share
+                │   │   │   ├── AppInfo.java
+                │   │   │   ├── AppPickerActivity.java
+                │   │   │   ├── BookmarkAdapter.java
+                │   │   │   ├── BookmarkPickerActivity.java
+                │   │   │   ├── LoadPackagesAsyncTask.java
+                │   │   │   └── ShareActivity.java
+                │   │   ├── ViewfinderResultPointCallback.java
+                │   │   ├── ViewfinderView.java
+                │   │   ├── ViewfinderView.java~
+                │   │   └── wifi
+                │   │       ├── NetworkType.java
+                │   │       └── WifiConfigManager.java
+                │   └── result
+                │       ├── AbstractDoCoMoResultParser.java
+                │       ├── AddressBookAUResultParser.java
+                │       ├── AddressBookDoCoMoResultParser.java
+                │       ├── AddressBookParsedResult.java
+                │       ├── BizcardResultParser.java
+                │       ├── BookmarkDoCoMoResultParser.java
+                │       ├── CalendarParsedResult.java
+                │       ├── EmailAddressParsedResult.java
+                │       ├── EmailAddressResultParser.java
+                │       ├── EmailDoCoMoResultParser.java
+                │       ├── ExpandedProductParsedResult.java
+                │       ├── ExpandedProductResultParser.java
+                │       ├── GeoParsedResult.java
+                │       ├── GeoResultParser.java
+                │       ├── ISBNParsedResult.java
+                │       ├── ISBNResultParser.java
+                │       ├── ParsedResult.java
+                │       ├── ParsedResultType.java
+                │       ├── ProductParsedResult.java
+                │       ├── ProductResultParser.java
+                │       ├── ResultParser.java
+                │       ├── SMSMMSResultParser.java
+                │       ├── SMSParsedResult.java
+                │       ├── SMSTOMMSTOResultParser.java
+                │       ├── SMTPResultParser.java
+                │       ├── TelParsedResult.java
+                │       ├── TelResultParser.java
+                │       ├── TextParsedResult.java
+                │       ├── URIParsedResult.java
+                │       ├── URIResultParser.java
+                │       ├── URLTOResultParser.java
+                │       ├── VCardResultParser.java
+                │       ├── VEventResultParser.java
+                │       ├── WifiParsedResult.java
+                │       └── WifiResultParser.java
+                ├── common
+                │   ├── BitArray.java
+                │   ├── BitMatrix.java
+                │   ├── BitSource.java
+                │   ├── CharacterSetECI.java
+                │   ├── DecoderResult.java
+                │   ├── DefaultGridSampler.java
+                │   ├── detector
+                │   │   ├── MathUtils.java
+                │   │   ├── MonochromeRectangleDetector.java
+                │   │   └── WhiteRectangleDetector.java
+                │   ├── DetectorResult.java
+                │   ├── GlobalHistogramBinarizer.java
+                │   ├── GridSampler.java
+                │   ├── HybridBinarizer.java
+                │   ├── PerspectiveTransform.java
+                │   ├── reedsolomon
+                │   │   ├── GenericGF.java
+                │   │   ├── GenericGFPoly.java
+                │   │   ├── ReedSolomonDecoder.java
+                │   │   ├── ReedSolomonEncoder.java
+                │   │   └── ReedSolomonException.java
+                │   └── StringUtils.java
+                ├── datamatrix
+                │   ├── DataMatrixReader.java
+                │   ├── DataMatrixWriter.java
+                │   ├── decoder
+                │   │   ├── BitMatrixParser.java
+                │   │   ├── DataBlock.java
+                │   │   ├── DecodedBitStreamParser.java
+                │   │   ├── Decoder.java
+                │   │   └── Version.java
+                │   ├── detector
+                │   │   └── Detector.java
+                │   └── encoder
+                │       ├── ASCIIEncoder.java
+                │       ├── Base256Encoder.java
+                │       ├── C40Encoder.java
+                │       ├── DataMatrixSymbolInfo144.java
+                │       ├── DefaultPlacement.java
+                │       ├── EdifactEncoder.java
+                │       ├── EncoderContext.java
+                │       ├── Encoder.java
+                │       ├── ErrorCorrection.java
+                │       ├── HighLevelEncoder.java
+                │       ├── SymbolInfo.java
+                │       ├── SymbolShapeHint.java
+                │       ├── TextEncoder.java
+                │       └── X12Encoder.java
+                ├── DecodeHintType.java
+                ├── Dimension.java
+                ├── EncodeHintType.java
+                ├── FormatException.java
+                ├── InvertedLuminanceSource.java
+                ├── LuminanceSource.java
+                ├── maxicode
+                │   ├── decoder
+                │   │   ├── BitMatrixParser.java
+                │   │   ├── DecodedBitStreamParser.java
+                │   │   └── Decoder.java
+                │   └── MaxiCodeReader.java
+                ├── multi
+                │   ├── ByQuadrantReader.java
+                │   ├── GenericMultipleBarcodeReader.java
+                │   ├── MultipleBarcodeReader.java
+                │   └── qrcode
+                │       ├── detector
+                │       │   ├── MultiDetector.java
+                │       │   └── MultiFinderPatternFinder.java
+                │       └── QRCodeMultiReader.java
+                ├── MultiFormatReader.java
+                ├── MultiFormatWriter.java
+                ├── NotFoundException.java
+                ├── oned
+                │   ├── CodaBarReader.java
+                │   ├── CodaBarWriter.java
+                │   ├── Code128Reader.java
+                │   ├── Code128Writer.java
+                │   ├── Code39Reader.java
+                │   ├── Code39Writer.java
+                │   ├── Code93Reader.java
+                │   ├── EAN13Reader.java
+                │   ├── EAN13Writer.java
+                │   ├── EAN8Reader.java
+                │   ├── EAN8Writer.java
+                │   ├── EANManufacturerOrgSupport.java
+                │   ├── ITFReader.java
+                │   ├── ITFWriter.java
+                │   ├── MultiFormatOneDReader.java
+                │   ├── MultiFormatUPCEANReader.java
+                │   ├── OneDimensionalCodeWriter.java
+                │   ├── OneDReader.java
+                │   ├── rss
+                │   │   ├── AbstractRSSReader.java
+                │   │   ├── DataCharacter.java
+                │   │   ├── expanded
+                │   │   │   ├── BitArrayBuilder.java
+                │   │   │   ├── decoders
+                │   │   │   │   ├── AbstractExpandedDecoder.java
+                │   │   │   │   ├── AI013103decoder.java
+                │   │   │   │   ├── AI01320xDecoder.java
+                │   │   │   │   ├── AI01392xDecoder.java
+                │   │   │   │   ├── AI01393xDecoder.java
+                │   │   │   │   ├── AI013x0x1xDecoder.java
+                │   │   │   │   ├── AI013x0xDecoder.java
+                │   │   │   │   ├── AI01AndOtherAIs.java
+                │   │   │   │   ├── AI01decoder.java
+                │   │   │   │   ├── AI01weightDecoder.java
+                │   │   │   │   ├── AnyAIDecoder.java
+                │   │   │   │   ├── BlockParsedResult.java
+                │   │   │   │   ├── CurrentParsingState.java
+                │   │   │   │   ├── DecodedChar.java
+                │   │   │   │   ├── DecodedInformation.java
+                │   │   │   │   ├── DecodedNumeric.java
+                │   │   │   │   ├── DecodedObject.java
+                │   │   │   │   ├── FieldParser.java
+                │   │   │   │   └── GeneralAppIdDecoder.java
+                │   │   │   ├── ExpandedPair.java
+                │   │   │   ├── ExpandedRow.java
+                │   │   │   └── RSSExpandedReader.java
+                │   │   ├── FinderPattern.java
+                │   │   ├── Pair.java
+                │   │   ├── RSS14Reader.java
+                │   │   └── RSSUtils.java
+                │   ├── UPCAReader.java
+                │   ├── UPCAWriter.java
+                │   ├── UPCEANExtension2Support.java
+                │   ├── UPCEANExtension5Support.java
+                │   ├── UPCEANExtensionSupport.java
+                │   ├── UPCEANReader.java
+                │   ├── UPCEANWriter.java
+                │   └── UPCEReader.java
+                ├── pdf417
+                │   ├── decoder
+                │   │   ├── BarcodeMetadata.java
+                │   │   ├── BarcodeValue.java
+                │   │   ├── BoundingBox.java
+                │   │   ├── Codeword.java
+                │   │   ├── DecodedBitStreamParser.java
+                │   │   ├── DetectionResultColumn.java
+                │   │   ├── DetectionResult.java
+                │   │   ├── DetectionResultRowIndicatorColumn.java
+                │   │   ├── ec
+                │   │   │   ├── ErrorCorrection.java
+                │   │   │   ├── ModulusGF.java
+                │   │   │   └── ModulusPoly.java
+                │   │   ├── PDF417CodewordDecoder.java
+                │   │   └── PDF417ScanningDecoder.java
+                │   ├── detector
+                │   │   ├── Detector.java
+                │   │   └── PDF417DetectorResult.java
+                │   ├── encoder
+                │   │   ├── BarcodeMatrix.java
+                │   │   ├── BarcodeRow.java
+                │   │   ├── Compaction.java
+                │   │   ├── Dimensions.java
+                │   │   ├── PDF417ErrorCorrection.java
+                │   │   ├── PDF417HighLevelEncoder.java
+                │   │   └── PDF417.java
+                │   ├── PDF417Common.java
+                │   ├── PDF417Reader.java
+                │   ├── PDF417ResultMetadata.java
+                │   └── PDF417Writer.java
+                ├── PlanarYUVLuminanceSource.java
+                ├── qrcode
+                │   ├── decoder
+                │   │   ├── BitMatrixParser.java
+                │   │   ├── DataBlock.java
+                │   │   ├── DataMask.java
+                │   │   ├── DecodedBitStreamParser.java
+                │   │   ├── Decoder.java
+                │   │   ├── ErrorCorrectionLevel.java
+                │   │   ├── FormatInformation.java
+                │   │   ├── Mode.java
+                │   │   └── Version.java
+                │   ├── detector
+                │   │   ├── AlignmentPatternFinder.java
+                │   │   ├── AlignmentPattern.java
+                │   │   ├── Detector.java
+                │   │   ├── FinderPatternFinder.java
+                │   │   ├── FinderPatternInfo.java
+                │   │   └── FinderPattern.java
+                │   ├── encoder
+                │   │   ├── BlockPair.java
+                │   │   ├── ByteMatrix.java
+                │   │   ├── Encoder.java
+                │   │   ├── MaskUtil.java
+                │   │   ├── MatrixUtil.java
+                │   │   └── QRCode.java
+                │   ├── QRCodeReader.java
+                │   └── QRCodeWriter.java
+                ├── ReaderException.java
+                ├── Reader.java
+                ├── Result.java
+                ├── ResultMetadataType.java
+                ├── ResultPointCallback.java
+                ├── ResultPoint.java
+                ├── RGBLuminanceSource.java
+                ├── WriterException.java
+                └── Writer.java
+
+169 directories, 867 files
