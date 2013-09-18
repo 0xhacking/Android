@@ -210,7 +210,7 @@ public final class CaptureActivity extends Activity implements
 			surfaceHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 		}
 
-		beepManager.updatePrefs();
+		//beepManager.updatePrefs();
 		ambientLightManager.start(cameraManager);
 
 		inactivityTimer.onResume();
@@ -466,7 +466,7 @@ public final class CaptureActivity extends Activity implements
 				historyManager.addHistoryItem(rawResult, resultHandler);
 				// Then not from history, so beep/vibrate and we have an image
 				// to draw on
-				beepManager.playBeepSoundAndVibrate();
+				//beepManager.playBeepSoundAndVibrate();
 				drawResultPoints(barcode, scaleFactor, rawResult);
 			}
 
