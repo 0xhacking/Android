@@ -133,7 +133,7 @@ public class MainActivity extends Activity {
 				HttpEntity requestHttpEntity = new UrlEncodedFormEntity(
 						pairList, "UTF-8");
 
-				HttpPost httpPost = new HttpPost("http://192.168.1.126/t.php");
+				HttpPost httpPost = new HttpPost("http://www.baidu.com/index.php");
 
 				// 将请求体内容加入请求中
 				httpPost.setEntity(requestHttpEntity);
@@ -150,8 +150,9 @@ public class MainActivity extends Activity {
 					Log.i("test", "xx");
 					HttpResponse httpResponse = httpClient.execute(httpPost);
 					Log.i("test", "xcxc");
-					line = EntityUtils.toString(httpResponse.getEntity(),
-							"UTF-8");
+					line = EntityUtils.toString(httpResponse.getEntity(),"UTF-8");
+					
+					line="{\"a\": [{\"name\":\"1705\",\"title\":\"(\u4eb2\u5b50)ddssd\",\"category_name\":\"\u9ed8\u8ba4\u5206\u7c7b\",\"showtime\":\"1288927800\",\"endshowtime\":\"1288931400\",\"allDay\":false},{\"name\":\"1705\",\"title\":\"(\u4eb2\u5b50)ddssd\",\"category_name\":\"\u9ed8\u8ba4\u5206\u7c7b\",\"showtime\":\"1288927800\",\"endshowtime\":\"1288931400\",\"allDay\":false}]}";
 
 					// if (httpResponse.getStatusLine().getStatusCode() != 200)
 					// {
@@ -169,20 +170,27 @@ public class MainActivity extends Activity {
 					
 					
 					 JSONObject result = new JSONObject(line);//转换为JSONObject
-			            int num = result.length();
+			            //int num = result.length();
 			            JSONArray nameList = result.getJSONArray("a");//获取JSONArray
 			            int length = nameList.length();
 			            String aa = "";
+			            
+			            
 			            for(int i = 0; i < length; i++){//遍历JSONArray
-			                Log.d("debugTest",Integer.toString(i));
+
+			            	Log.d("debugTest",Integer.toString(i));
+			            	
 			                JSONObject oj = nameList.getJSONObject(i);
+			                
 			                line = aa + oj.getString("name");
+			                
 			        		map = new HashMap<String, Object>();
-							Log.i("weitao", params[0]);
-							map.put("img", getBitmap(url2));
+							
+			        		Log.i("weitao", params[0]);
+
+			        		map.put("img", getBitmap(url2));
 							map.put("title", line);
-							map.put("info",
-									"那一年，是听莫扎特、钓鲈鱼和家庭破裂的一年。说到家庭破裂，母亲怪自己当初没有找到好男人，父亲则认为当时是被狐狸精迷住了眼，失常的是母亲，但出问题的是父亲");
+							map.put("info","那一年，是听莫扎特、钓鲈鱼和家庭破裂的一年。说到家庭破裂，母亲怪自己当初没有找到好男人，父亲则认为当时是被狐狸精迷住了眼，失常的是母亲，但出问题的是父亲");
 							list.add(map);
 			                
 			            }
